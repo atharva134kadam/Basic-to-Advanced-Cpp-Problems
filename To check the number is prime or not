@@ -1,0 +1,33 @@
+//To check the number is prime or not:-
+#include<iostream>
+using namespace std;
+int Prime(int a){
+    if(a<2){
+        return 0;
+    }
+    else{
+        int t;
+        t = a/2;
+
+        for(int i=2 ; i<=t ; i++){
+            if((a%i==0)){
+                return 0;
+            }
+        }
+        return 1;
+    }
+}
+int main(){
+    
+    int a;
+
+    cout<<"Enter a number: ";
+    cin>>a;
+
+    if(Prime(a)){
+        cout<<a<<" is a prime number";
+    }
+    else{
+        cout<<a<<" is not a prime number";
+    }
+}
