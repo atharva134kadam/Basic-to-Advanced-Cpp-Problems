@@ -1,0 +1,22 @@
+//Swaping two numbers without using third variable:-
+
+#include <iostream>
+using namespace std;
+int main() {
+
+  int a, b, t;
+
+  cout << "Enter A: ";
+  cin >> a;
+  cout << "Enter b: ";
+  cin >> b;
+
+  t=a+b;
+  a=t-a;
+  b=t-a;
+
+  cout<<"Value of A is: "<<a<<endl;
+  cout<<"Value of B is: "<<b;
+
+  return 0;
+}
