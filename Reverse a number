@@ -1,0 +1,21 @@
+//Reverse a number:-
+#include <iostream>
+using namespace std;
+int main() {
+
+    int a , rev = 0 , remainder , quotient;
+
+    cout<<"Enter a number: ";
+    cin>>a;
+
+    while(a>0){
+        remainder = a % 10;
+        rev = rev*10 + remainder;
+        quotient = a/10;
+        a = quotient;
+    }
+
+    cout<<"Reversed number is: "<<rev;
+    
+  return 0;
+}
