@@ -1,0 +1,31 @@
+//Check palindrome or not:-
+#include<iostream>
+using namespace std;
+int main(){
+
+    int a , rev = 0 , remainder , quotient , t;
+
+    cout<<"Enter a number: ";
+    cin>>a;
+    t=a;
+
+    while(a>0){
+
+        remainder = a%10;
+        rev = rev*10 + remainder;
+        quotient = a/10;
+        a = quotient;
+ 
+    }
+
+
+    if(t == rev){
+        cout<<"Number is a palindrome";
+    }
+    else{ 
+        cout<<"number is not a palindrome";
+    }
+
+    return 0;
+
+}
