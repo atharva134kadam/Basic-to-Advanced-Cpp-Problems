@@ -1,0 +1,22 @@
+//Count numbers in a digit:-
+#include<iostream>
+using namespace std;
+int main(){
+
+    int a , quotient , count = 0;
+
+    cout<<"Enter a number: ";
+    cin>>a;
+
+    while(a>0){
+
+        quotient = a/10;
+        a = quotient;
+        count++;
+    }
+
+    cout<<"There are "<<count<<" digits in your number";
+    
+    return 0;
+
+}
