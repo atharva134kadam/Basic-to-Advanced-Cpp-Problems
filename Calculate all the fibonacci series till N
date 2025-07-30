@@ -1,0 +1,21 @@
+// Calculate all the fibonacci series till N:-
+#include <iostream>
+using namespace std;
+int main() {
+
+  int first = 0, second = 1, fibo, a, i, j;
+
+  cout << "Enter a number: ";
+  cin >> a;
+
+  for (i = 1; i <= a; i++) {
+
+    cout<<first<<" ";
+    fibo = first + second;
+    first = second;
+    second = fibo;
+
+  }
+
+  return 0;
+}
