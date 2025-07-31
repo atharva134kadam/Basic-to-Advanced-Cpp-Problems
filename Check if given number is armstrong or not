@@ -1,0 +1,40 @@
+//Check if given number is armstrong or not:-
+#include<iostream>
+#include<cmath>
+using namespace std;
+int armstrong_num(int num , int digi)
+{
+    int remainder , arm = 0 , quotient;
+    while(num>0)
+    {
+        remainder = num%10;
+        arm = pow(remainder , digi) + arm;
+        quotient = num/10;
+        num = quotient;
+    }
+    return arm;
+}
+int main()
+{
+    int number , armstrong , temp , digits = 0;
+    cout<<"Enter the number: ";
+    cin>>number;
+
+    temp = number;
+    while(temp != 0)
+    {
+        digits++;
+        temp = temp/10;
+    }
+
+    armstrong = armstrong_num(number , digits);
+    
+    if(armstrong == number)
+    {
+        cout<<"Number is armstrong";
+    }
+    else
+    {
+        cout<<"Number is not armstrong";
+    }
+}
