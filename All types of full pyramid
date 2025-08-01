@@ -1,0 +1,54 @@
+//All types of full pyramid:-
+#include<iostream>
+using namespace std;
+void pyramid(int n)
+{
+    for(int i=1 ; i<=n ; i++)
+    {
+        for(int j=1 ; j<=(n-i) ; j++)
+        {
+            cout<<" ";
+        }
+        for(int k=1 ; k<=i ; k++)
+        {
+            cout<<"*";
+        }
+        for(int l=1 ; l<i ; l++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+void inv_pyramid(int n)
+{
+    for(int i=1 ; i<=n ; i++)
+    {
+        for(int j=1 ; j<i ; j++)
+        {
+            cout<<" ";
+        }
+        for(int k=n ; k>=i ; k--)
+        {
+            cout<<"*";
+        }
+        for(int l=1 ; l<=(n-i) ; l++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+int main()
+{
+    int num;
+
+    cout<<"Enter the number: ";
+    cin>>num;
+
+    cout<<"Full pyramid: "<<endl;
+    pyramid(num);
+    cout<<"Inverted full pyramid: "<<endl;
+    inv_pyramid(num);
+
+}
