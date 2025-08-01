@@ -1,0 +1,42 @@
+//Calculator using switch case:-
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,op;
+
+    cout<<"Enter two numbers: ";
+    cin>>a>>b;
+    cout<<"Enter 1 to add, 2 to sub, 3 to mul and 4 to div: ";
+    cin>>op;
+
+    switch(op)
+    {
+        case 1:
+        int add;
+        add = a+b;
+        cout<<"Addition is: "<<add;
+        break;
+
+        case 2:
+        int sub;
+        sub = a-b;
+        cout<<"Subtraction is: "<<sub;
+        break;
+
+        case 3:
+        int mul;
+        sub = a*b;
+        cout<<"Multiplication is: "<<sub;
+        break;
+
+        case 4:
+        int div;
+        div = a/b;
+        cout<<"Division is: "<<div;
+        break;
+
+        default:
+        cout<<"Enter a correct value";
+    }
+}
