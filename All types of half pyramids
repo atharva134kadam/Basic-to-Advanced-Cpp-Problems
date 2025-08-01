@@ -1,0 +1,77 @@
+//All types of half pyramids:-
+#include<iostream>
+using namespace std;
+void half_pyramid(int n)
+{
+    for(int i=1 ; i<=n ; i++)
+    {
+        for(int j=1 ; j<=i ; j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+void inv_half_pyramid(int n)
+{
+    for(int i=n ; i>=1 ; i--)
+    {
+        for(int j=1 ; j<=i ; j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+void right_align_half_pyramid(int n)
+{
+    for(int i=1 ; i<=n ; i++)
+    {
+        for(int j=1 ; j<=(n-i) ; j++)
+        {
+            cout<<" ";
+        }
+        for(int k=1 ; k<=i ; k++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+void inv_right_align_half_pyramid(int n)
+{
+    for(int i=n ; i>=1 ; i--)
+    {
+        for(int j=1 ; j<=(n-i) ; j++)
+        {
+            cout<<" ";
+        }
+        for(int k=1 ; k<=i ; k++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+int main()
+{
+    int num;
+
+    cout<<"Enter a number: ";
+    cin>>num;
+
+    cout<<"Half pyramid: "<<endl;
+    half_pyramid(num);
+    cout<<"Half inverted pyramid:"<<endl;
+    inv_half_pyramid(num);
+    cout<<"Right aligned half pyramid:"<<endl;
+    right_align_half_pyramid(num);
+    cout<<"Inverted right aligned half pyramid:"<<endl;
+    inv_right_align_half_pyramid(num);
+    
+    return 0;
+
+}
