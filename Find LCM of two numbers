@@ -1,0 +1,29 @@
+//Find LCM of two numbers:-
+#include<iostream>
+using namespace std;
+int lcm_of_two(int a,int b,int pro)
+{
+    while(b != 0)
+    {
+        int temp = b;
+        b = a%b;
+        a = temp;
+    }
+
+    return pro/a; 
+}
+int main()
+{
+    int a,b,l,product;
+
+    cout<<"Enter two numbers: ";
+    cin>>a>>b;
+
+    product = a*b;
+    l = lcm_of_two(a,b,product);
+
+    cout<<"LCM of two numbers is: "<<l;
+
+    return 0;
+
+}
