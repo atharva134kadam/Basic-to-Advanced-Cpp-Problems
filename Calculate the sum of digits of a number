@@ -1,0 +1,28 @@
+//Calculate the sum of digits of a number:-
+#include<iostream>
+using namespace std;
+int sum_of_number(int n)
+{
+    int quotient, remainder;
+    int sum = 0;
+    while(n!=0)
+    {
+        remainder = n%10;
+        sum = remainder + sum;
+        quotient = n/10;
+        n = quotient;
+    }
+    return sum;
+}
+int main()
+{
+    int num,sum;
+
+    cout<<"Enter a number: ";
+    cin>>num;
+
+    sum = sum_of_number(num);
+
+    cout<<"Sum is: "<<sum;
+
+}
