@@ -1,0 +1,31 @@
+//Check if string is palindrome:-
+#include<iostream>
+using namespace std;
+string palindrome(string name)
+{
+    string rev;
+    for(int i = (name.length()-1) ; i>=0 ; i--)
+    {
+        rev += name[i];
+    }
+    return rev;
+}
+int main()
+{
+    string name,palin;
+
+    cout<<"Enter a string: ";
+    getline(cin , name);
+
+    palin = palindrome(name);
+
+    if(palin == name)
+    {
+        cout<<"Its a palindrome string";
+    }
+    else
+    {
+        cout<<"Its not a palindrome string";
+    }
+
+}
