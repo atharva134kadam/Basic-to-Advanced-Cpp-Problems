@@ -1,0 +1,29 @@
+//Find if character is alphabet, special symbol or a digit:-
+#include<iostream>
+using namespace std;
+int main()
+{
+    char ch;
+    
+    cout<<"Enter a character: ";
+    cin>>ch;
+
+    int num = ch;
+
+    if(num>=33 && num<=47)
+    {
+        cout<<"It is an special symbol !";
+    }
+    else if(num>=48 && num<=57)
+    {
+        cout<<"It is an digit !";
+    }
+    else if(num>=58 && num<=122)
+    {
+        cout<<"It is an alphabet";
+    }
+    else 
+    {
+        cout<<"Enter an valid character";
+    }
+}
