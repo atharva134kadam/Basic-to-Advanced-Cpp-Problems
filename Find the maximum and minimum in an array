@@ -1,0 +1,58 @@
+//Find the maximum and minimum in an array:-
+#include<iostream>
+using namespace std;
+int maximum(int array[], int size)
+{
+    int max = array[0];
+
+    for(int i=0 ; i<size ; i++)
+    {
+        if(max<array[i])
+        {
+            max = array[i];
+        }
+    }
+    return max;
+}
+int minimum(int array[], int size)
+{
+    int min = array[0];
+
+    for(int i=0 ; i<size ; i++)
+    {
+        if(min>array[i])
+        {
+            min = array[i];
+        }
+    }
+    return min;
+}
+int main()
+{
+    int arr[100];
+    int size;
+    int max,min;
+
+    cout<<"Enter the size of your array: ";
+    cin>>size;
+
+    if(size <= 0 || size > 100) 
+    {
+        cout << "Invalid array size!";
+        return 1;
+    }
+
+    cout<<"Enter the elements in the array: ";
+    for(int i=0 ; i<size ; i++)
+    {
+        cin>>arr[i];
+    }
+
+    max = maximum(arr,size);
+
+    cout<<"Maximum is: "<<max<<endl;
+
+    min = minimum(arr,size);
+
+    cout<<"Minimum is: "<<min;
+}
