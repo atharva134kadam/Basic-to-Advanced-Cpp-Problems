@@ -1,0 +1,55 @@
+//Binary search:-
+#include<iostream>
+using namespace std;
+int main()
+{
+    int arr[100],size,target;
+
+    cout<<"Enter size of array: ";
+    cin>>size;
+
+    if((size<=0) || (size>100))
+    {
+        cout<<"Invalid size!!";
+        return 1;
+    }
+
+    cout<<"Enter array elements (in ascending): ";
+    for(int i=0 ; i<size ; i++)
+    {
+        cin>>arr[i];
+    }
+
+    cout<<"Enter the target element: ";
+    cin>>target;
+
+    int start = 0;
+    int end = (size-1);
+    bool found = false;
+
+    while(start<=end)
+    {
+        int mid = start + (end - start) / 2;
+
+
+        if(arr[mid] == target)
+        {
+            cout<<"Element found at "<<mid<<" index !";
+            found = true;
+            break;
+        }
+        else if(arr[mid]<target)
+        {
+            start = (mid+1);
+        }
+        else
+        {
+            end = (mid-1);
+        }
+    }
+
+    if(!found)
+    {
+        cout<<"Element not found !";
+    }
+}
