@@ -1,0 +1,39 @@
+//Rotate the array left by one index:-
+#include<iostream>
+using namespace std;
+int main()
+{
+    int arr[100];
+    int size, index;
+
+    cout<<"Enter the size of array: ";
+    cin>>size;
+
+    if(size<=0 || size>100)
+    {
+        cout<<"Invalid size!!";
+        return 1;
+    }
+
+    cout<<"Enter the array contents: ";
+    for(int i=0 ; i<size ; i++)
+    {
+        cin>>arr[i];
+    }
+
+    int temp = arr[0];
+
+    for(int j=0 ; j<size-1 ; j++)
+    {
+        arr[j] = arr[j+1];
+    }
+
+    arr[size-1] = temp;
+
+    cout<<"Rotated array: ";
+    for(int k=0 ; k<=size-1 ; k++)
+    {
+        cout<<arr[k];
+    }
+
+}
