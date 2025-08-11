@@ -1,0 +1,29 @@
+//Count words in a string:-
+#include<iostream>
+using namespace std;
+int main()
+{
+    string str;
+    int len, count=0;
+    bool space=false;
+
+    cout<<"Enter a string: ";
+    getline(cin , str);
+
+    len = str.length();
+
+    for(int i=0 ; i<len ; i++)
+    {
+        if(isspace(str[i]))
+        {
+            space = false;
+        }
+        else if(!space)
+        {
+            space = true;
+            count++;
+        }
+    }
+
+    cout<<"The string has "<<count<<" words.";
+}
