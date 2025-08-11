@@ -1,0 +1,28 @@
+// Remove duplicates from a string:-
+#include <iostream>
+using namespace std;
+int main() 
+{
+  string str;
+  string result="";
+
+  bool seen[256] = {false};
+
+  cout<<"Enter a string: ";
+  getline(cin , str);
+
+  for(char ch : str)
+  {
+    if(isspace(ch))
+    {
+        continue;
+    }
+    if(!seen[(unsigned char)ch])
+    {
+        result += ch;
+        seen[(unsigned char)ch] = true;
+    }
+  }
+
+  cout<<"String without duplicates: "<<result;
+}
