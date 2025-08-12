@@ -1,0 +1,67 @@
+//Addition of matrices:-
+#include<iostream>
+using namespace std;
+void input_matrix(int r,int c,int m[50][50])
+{
+    for(int i=0 ; i<r ; i++)
+    {
+        for(int j=0 ; j<c ; j++)
+        {
+            cin>>m[i][j];
+        }
+    }
+}
+
+void print_matrix(int r,int c,int m[50][50])
+{
+    for(int i=0 ; i<r ; i++)
+    {
+        for(int j=0 ; j<c ; j++)
+        {
+            cout<<m[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void add_matrix(int r,int c,int m1[50][50],int m2[50][50])
+{
+    int add[50][50];
+    for(int i=0 ; i<r ; i++)
+    {
+        for(int j=0 ; j<c ; j++)
+        {
+            add[i][j] = m1[i][j] + m2[i][j];
+            cout<<add[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+int main()
+{
+    int rows , cols;
+
+    cout<<"Enter number of rows: ";
+    cin>>rows;
+
+    cout<<"Enter number of columns: ";
+    cin>>cols;
+
+    int mat1[50][50] , mat2[50][50];
+
+    cout<<"Enter matrix 1 contents: ";
+    input_matrix(rows,cols,mat1);
+
+    cout<<"Array 1 is: "<<endl;
+    print_matrix(rows,cols,mat1);
+
+
+    cout<<"Enter matrix 2 contents: ";
+    input_matrix(rows,cols,mat2);
+
+    cout<<"Array 2 is: "<<endl;
+    print_matrix(rows,cols,mat2);
+
+    cout<<"Addition is: "<<endl;
+    add_matrix(rows , cols , mat1 , mat2);
+}
