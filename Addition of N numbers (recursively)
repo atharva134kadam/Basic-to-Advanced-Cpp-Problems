@@ -1,0 +1,23 @@
+//Addition of N numbers (recursively):-
+#include<iostream>
+using namespace std;
+int sum=0;
+int add_recursive(int num)
+{
+    if(num  == 0)
+    {
+        return 0;
+    }
+    return num + add_recursive(num-1);
+}
+int main()
+{
+    int n;
+
+    cout<<"Enter the number till you want addition: ";
+    cin>>n;
+
+    int add = add_recursive(n);
+
+    cout<<"Addition is: "<<add;
+}
