@@ -1,0 +1,66 @@
+//Linear probing:-
+#include<iostream>
+#include<vector>
+using namespace std;
+vector<int> table;
+int size;
+int hashFunc(int key)
+{
+    return key%size;
+}
+void insert(int key)
+{
+    int startIndex = hashFunc(key);
+    int index = startIndex;
+
+    while(table[index] != -1)
+    {
+        cout<<"\nElement at "<<index<<" ,searching for next empty index...";
+        index = (index+1)%size;
+
+        if(startIndex == index)
+        {
+            cout<<"\nHash table full !!";
+            return;
+        }
+    }
+    table[index] = key;
+}
+
+void display_table(int n)
+{
+    for(int i=0 ; i<size ; i++)
+    {
+        if(table[i] != -1)
+        {
+            cout<<"\nValue at index "<<i<<" is: "<<table[i];
+        }
+        else
+        {
+            cout<<"\nValue at index "<<i<<" is: -1";
+        }
+    }
+}
+int main()
+{
+    int n;
+
+    cout<<"\nEnter the size of table: ";
+    cin>>size;
+
+    table.resize(size,-1);
+
+    cout<<"\nHow many elements you want to enter: ";
+    cin>>n;
+
+    for(int i=1 ; i<=n ; i++)
+    {
+        int key;
+        cout<<"\nEnter the element "<<i<<": ";
+        cin>>key;
+        insert(key);
+    }
+
+    cout<<"\nYour hash table: "<<endl;
+    display_table(n);
+}
