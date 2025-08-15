@@ -1,0 +1,67 @@
+//Sentinel search:-
+#include<iostream>
+using namespace std;
+int sentinel_search(int arr[100] ,int n ,int key)
+{
+    if(n == 0)
+    {
+        return -1;
+    }
+
+    int last = arr[n-1];
+    arr[n-1] = key;
+
+    int i=0;
+
+    while(arr[i] != key)
+    {
+        i++;
+    }
+
+    arr[n-1] = last;
+
+    if(i<(n-1))
+    {
+        return i;
+    }
+
+    if(last == key)
+    {
+        return n-1;
+    }
+
+    return -1;
+}
+int main()
+{
+    int arr[100] , n , num , key;
+
+    cout<<"Enter the size of array: ";
+    cin>>n;
+
+    if(n<=0 || n>100)
+    {
+        cout<<"Invalid size!!";
+        return 1;
+    }
+
+    cout<<"Enter array contents: ";
+    for(int i=0 ; i<n ; i++)
+    {
+        cin>>arr[i];
+    }
+
+    cout<<"Enter the number to search: ";
+    cin>>key;
+
+    num = sentinel_search(arr , n , key);
+
+    if(num != -1)
+    {
+        cout<<"Element found at "<<num<<" index !!";
+    }
+    else
+    {
+        cout<<"Element not found !!";
+    }
+}
