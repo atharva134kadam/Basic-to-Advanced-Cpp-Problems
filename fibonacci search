@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+int fibSearch(int arr[], int n, int key) {
+    // Initialize Fibonacci numbers
+    int fibM2 = 0;   // (m-2)'th Fibonacci number
+    int fibM1 = 1;   // (m-1)'th Fibonacci number
+    int fibM  = fibM1 + fibM2;  // m'th Fibonacci number
+
+    // fibM will store the smallest Fibonacci number >= n
+    while (fibM < n) {
+        fibM2 = fibM1;
+        fibM1 = fibM;
+        fibM  = fibM1 + fibM2;
+    }
+
+    int offset = -1; // Marks the eliminated range from the front
+
+    // While there are elements to be inspected
+    while (fibM > 1) {
+        // Check index = offset + fibM2
+        int i = min(offset + fibM2, n - 1);
+
+        if (arr[i] < key) {
+            // Move right: eliminate left part
+            fibM  = fibM1;
+            fibM1 = fibM2;
+            fibM2 = fibM - fibM1;
+            offset = i;
+        }
+        else if (arr[i] > key) {
+            // Move left: eliminate right part
+            fibM  = fibM2;
+            fibM1 = fibM1 - fibM2;
+            fibM2 = fibM - fibM1;
+        }
+        else {
+            return i; // Found key
+        }
+    }
+
+    // Compare the last element with key
+    if (fibM1 && arr[offset + 1] == key)
+        return offset + 1;
+
+    return -1; // Not found
+}
+
+int main() {
+    int arr[] = {10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int key;
+    cout << "Enter key to search: ";
+    cin >> key;
+
+    int index = fibSearch(arr, n, key);
+
+    if (index >= 0)
+        cout << "Found at index " << index << "\n";
+    else
+        cout << "Not Found\n";
+
+    return 0;
+}
