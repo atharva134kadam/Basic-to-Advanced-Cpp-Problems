@@ -1,0 +1,60 @@
+//Quick Sorting:-
+#include<iostream>
+#include<vector>
+using namespace std;
+int partition(vector<int> &arr ,int st ,int end)
+{
+    int idx=st-1, pvt=arr[end];
+    for(int j=st ; j<end ; j++)
+    {
+        if(arr[j]<pvt)
+        {
+            idx++;
+            swap(arr[j] , arr[idx]);
+        }
+    }
+
+    idx++;
+    swap(arr[idx] , arr[end]);
+    return idx;
+}
+
+void QuickSort(vector<int> &arr , int st , int end)
+{
+    if(st<end)
+    {
+        int pivtIdx = partition(arr , st , end);
+        QuickSort(arr ,st , pivtIdx-1);   //left half
+        QuickSort(arr ,pivtIdx+1 , end);    //right half
+    }
+}
+
+int main()
+{
+    int size;
+
+    cout<<"Enter the size of array: ";
+    cin>>size;
+
+    vector<int> arr(size);
+
+    if(size<=0 || size>100)
+    {
+        cout<<"Invalid size!!";
+        return 1;
+    }
+
+    cout<<"Enter the array contents: ";
+    for(int i=0 ; i<size ; i++)
+    {
+        cin>>arr[i];
+    }
+
+    QuickSort(arr , 0 , arr.size()-1);
+
+    cout<<"Sorted array: ";
+    for(int k=0 ; k<size ; k++)
+    {
+        cout<<arr[k]<<" ";
+    }
+}
