@@ -1,0 +1,34 @@
+//Check whether the no. is automorphic or not:
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    long long num;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    long long square = num * num;
+
+    long long temp = num;
+    bool isAutomorphic = true;
+
+    while (temp > 0)
+    {
+        if ((temp % 10) != (square % 10))
+        {
+            isAutomorphic = false;
+            break;
+        }
+        temp /= 10;
+        square /= 10;
+    }
+
+    if (isAutomorphic)
+        cout << num << " is an Automorphic number.";
+    else
+        cout << num << " is NOT an Automorphic number.";
+
+    return 0;
+}
